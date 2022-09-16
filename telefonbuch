@@ -1,0 +1,31 @@
+// https://www.youtube.com/watch?v=BSaF8KxnoLY
+// Telefonbuch
+
+#include <stdio.h>
+
+int main() {
+     if(showMenu() == 0) {
+         // Code zum Telefonnumer anzeigen 
+         printf("Telefonnumer: ");
+     } else {
+         printf("Neue Nummer hinzufugen");
+     }
+    return 0;
+}
+    int showMenu () {
+        
+        int selection;
+        printf("##### Herzlich Wilkommen #####\n");
+        printf(" (0)  Telefonnumer anzeigen\n");
+        printf(" (1)  Neue Nummer hinzufugen\n");
+        scanf(" %d", &selection);
+        printf("\n\n");
+        if (selection == 0 ||selection ==1 ) {
+             return selection;
+        } else {
+            printf("Eingabe ungültig!\n");
+             printf("\n\n");
+            return showMenu ();
+        }
+        
+    }
