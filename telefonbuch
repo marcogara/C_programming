@@ -4,14 +4,51 @@
 #include <stdio.h>
 
 int main() {
-     if(showMenu() == 0) {
-         // Code zum Telefonnumer anzeigen 
-         printf("Telefonnumer: ");
-     } else {
-         printf("Neue Nummer hinzufugen");
-     }
+    char phoneNumbers[100] [256] = {
+        "+49 12214564523",
+        "+49 15641414521",
+        "+49 16214564900",
+        "+49 15680606470",
+    };
+    int nextIndex =4;
+    
+    start(nextIndex, phoneNumbers); 
+
     return 0;
 }
+
+void start(int nextIndex,char phoneNumbers[100] [256]) {
+         if(showMenu() == 0) {
+        showPhoneNumbers(nextIndex, phoneNumbers);
+     } else {
+         addPhoneNumber(nextIndex,phoneNumbers);
+     }
+    
+}
+
+    void showPhoneNumbers(int nextIndex, char phoneNumbers[100][256]) {
+                 // Code zum Telefonnumer anzeigen 
+                 
+         printf("Telefonnumer: \n");
+         for(int i =0 ;i< 10 ;i++) {
+                     printf(" (%d) %s \n", i , &phoneNumbers[i]);
+         }
+         
+          start(nextIndex, phoneNumbers); 
+        
+    }
+    // Bsp. addPhoneNumber (4)
+    void addPhoneNumber(int nextIndex, char phoneNumbers[100][256]) { // index =4 
+         printf("Neue Nummer hinzufügen ");
+         char newNumber [255];
+         scanf( "%s" ,newNumber);
+         
+         strcpy(phoneNumbers [nextIndex], newNumber);
+         nextIndex++;
+            start(nextIndex, phoneNumbers);
+        
+    }
+
     int showMenu () {
         
         int selection;
@@ -27,5 +64,6 @@ int main() {
              printf("\n\n");
             return showMenu ();
         }
-        
     }
+        
+    
