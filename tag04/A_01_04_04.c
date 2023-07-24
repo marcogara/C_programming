@@ -26,8 +26,6 @@ int main(void)
 
         pw=ps/gs*100;
         gs=gs/2;
-        //  printf("\npw ist: %f",pw);
-        //  printf("\ngs ist: %f",gs);
 
         if (pw>gs)
         {
@@ -39,7 +37,6 @@ int main(void)
         }
 
         printf("\nProgramm endet nun.");
-
 
     printf("\n\n\n");
     system("pause");
