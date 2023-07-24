@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
 
-
 int main(void)
 {
     system("chcp.com 1252");
@@ -28,9 +27,7 @@ int main(void)
 
         printf("Gesamtpreis: %.2f",gesamtpreis);
         
-
         printf("\nProgramm endet nun.");
-
 
     printf("\n\n\n");
     system("pause");
