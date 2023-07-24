@@ -18,16 +18,14 @@ int main(void)
         scanf("%c",&b2);
         printf("\n");
 
-        printf("Wählen Sie bitte aus ....\n");
-        printf("(1) für Ausgabe nebeneinander\n");
-        printf("(2) für Ausgabe übereinander\n");
-
+        printf("WÃ¤hlen Sie bitte aus ....\n");
+        printf("(1) fÃ¼r Ausgabe nebeneinander\n");
+        printf("(2) fÃ¼r Ausgabe Ã¼bereinander\n");
         printf("Ihre Auswahl: ");
         fflush(stdin);
         scanf("%d",&wahl);
 
         printf("\n");
-
         printf("Ausgabe:\n");
 
         if (wahl==1)
@@ -38,9 +36,8 @@ int main(void)
         {
             printf("%c\n%c",b1,b2);
         }
-
+    
         printf("\nProgramm endet nun.");
-
 
     printf("\n\n\n");
     system("pause");
