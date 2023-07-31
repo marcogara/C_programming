@@ -1,10 +1,13 @@
+    // Nice example of bad code and the related problem of lack of documentation. I remember what I was trying to build at the time,
+    // but after a few months, it is no longer possible to reconstruct the story behind the code.
+    // This emphasizes the importance of proper documentation!
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
 #include <time.h>
-    
+
 int main(void)
-// algoritm will ask a volatiliy value then 
+    // algoritm will ask a volatiliy value then 
 {
     SetConsoleOutputCP(1252); SetConsoleCP(1252); system("cls");
 
@@ -22,11 +25,6 @@ int main(void)
 
     volIntMedian=1000;
     volVariation=vol*10;
-
-    //printf("volmedian point is: %d\t",volIntMedian);
-
-    //printf("vol variation  is: %d",volVariation);
-
 
     min=volIntMedian-volVariation;
     max=volIntMedian+volVariation;
@@ -68,19 +66,13 @@ int main(void)
     for (int i = 0; i < 50; i++)
     {
         test = rand() % (max - min + 1) + min;
-        // printf("%.d | ", test);
 
             result=((float)test-volIntMedian)/10;
              
             startPreis=(startPreis*(result/100))+startPreis;
 
-            // printf("%.3f \n",result/100);
-
             printf("%.1f | %.2f \n", result,startPreis);
     }
-    printf("\n\n");
-
-
     printf("\n\n");
     system("pause");
 }
