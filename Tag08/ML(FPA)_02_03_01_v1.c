@@ -2,7 +2,6 @@
 #include <windows.h>
 
 // For Schleife Variation 
-
 int main(void)
 {
     system("chcp.com 1252");
