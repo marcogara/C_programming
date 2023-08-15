@@ -6,27 +6,37 @@ int main(void)
     system("chcp.com 1252");
     system("cls");
 
-float monthlyBudget;
+    float monthlyBudget;
     printf("Welcome to the Barebone Budgeting App!\n");
 
     // Input the monthly budget
     printf("Enter your monthly budget: ");
     scanf("%f", &monthlyBudget);
 
+    // Open the file for storing expenses
+    FILE *expenseFile = fopen("expenses.txt", "w");
+    if (expenseFile == NULL) {
+        printf("Error opening the file for expenses.\n");
+        return 1;
+    }
+
     float totalExpenses = 0.0;
-    int numExpenses;
+    char response;
 
-    // Input the number of expenses
-    printf("Enter the number of expenses: ");
-    scanf("%d", &numExpenses);
-
-    // Input individual expenses
-    for (int i = 1; i <= numExpenses; ++i) {
+    // Input expenses and write to file
+    do {
         float expense;
-        printf("Enter expense %d: ", i);
+        printf("Enter an expense: ");
         scanf("%f", &expense);
         totalExpenses += expense;
-    }
+        fprintf(expenseFile, "%.2f\n", expense);
+
+        printf("Do you want to enter another expense? (y/n): ");
+        scanf(" %c", &response);
+    } while (response == 'y' || response == 'Y');
+
+    // Close the expense file
+    fclose(expenseFile);
 
     // Calculate remaining budget
     float remainingBudget = monthlyBudget - totalExpenses;
